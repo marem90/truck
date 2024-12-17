@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucky Wheels</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #ffffff;
+    }
+    header {
+      background-color: #008c45;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #008c45;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: #009e60;
+      transition: width 0.4s ease-in-out;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: #009e60;
+    }
+    .hero {
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      font-size: 2em;
+      background-color: #004225;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fadeInOut 18s infinite;
+    }
+    .hero img:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .hero img:nth-child(2) {
+      animation-delay: 6s;
+    }
+    .hero img:nth-child(3) {
+      animation-delay: 12s;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      50% { opacity: 1; }
+      75% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .logo-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .logo-container img {
+      width: 200px;
+    }
+    section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+    }
+    .services div {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #008c45;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      background-color: #004225;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    * {
+      transition: all 0.4s ease-in-out;
+    }
+    body {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Lucky Wheels</h1>
+  <p>Reliable and efficient trucking services across America</p>
+</header>
+
+<nav>
+  <a href="#services" class="scroll-link">Services</a>
+  <a href="#about" class="scroll-link">About Us</a>
+  <a href="#contact" class="scroll-link">Contact</a>
+</nav>
+
+<div class="hero">
+  <img src="image_50429441.JPG" alt="Truck Image 1">
+  <img src="truck-image-2.jpg" alt="Truck Image 2">
+  <img src="truck-image-2.jpg" alt="Truck Image 3">
+</div>
+
+<div class="logo-container">
+  <img src="unnamed.png" alt="Lucky Wheels Logo">
+</div>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div>
+      <h3>Freight Transport</h3>
+      <p>Fast and reliable delivery of goods nationwide.</p>
+    </div>
+    <div>
+      <h3>Logistics Solutions</h3>
+      <p>Tailored logistics plans for your business needs.</p>
+    </div>
+    <div>
+      <h3>Heavy Hauling</h3>
+      <p>Expertise in transporting oversized and heavy loads.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>With over 20 years of experience, Lucky Wheels has been a leader in the trucking industry. Our fleet of modern trucks and team of professional drivers ensure that your goods are delivered safely and on time.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: +1 (123) 456-7890</p>
+  <p>Email: info@luckywheels.com</p>
+  <p>Address: 123 Logistics Lane, Dallas, TX</p>
+</section>
+
+<footer>
+  <p>&copy; 2024 Lucky Wheels. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+        top: target.offsetTop - 50,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+</body>
+</html>
